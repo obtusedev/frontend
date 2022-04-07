@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 80vw;
+    max-height: 50vh;
+    width: calc(800px - 4rem * 2);
+    margin-top: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+#id {
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+#quote {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+}
+
+#author {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.underline {
+    text-decoration: underline;
+    text-decoration-color: inherit;
+    text-decoration-style: solid;
+}
