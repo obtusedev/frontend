@@ -25,12 +25,6 @@ main {
     margin-bottom: 1.2rem;
 }
 
-#id {
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    margin-bottom: 1rem;
-}
-
 #quote {
     font-family: "Poppins", sans-serif;
     font-size: 1.25rem;

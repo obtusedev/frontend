@@ -1,5 +1,4 @@
 const titleEl = document.getElementById("title");
-const idEl = document.getElementById("id");
 const authorEl = document.getElementById("author");
 
 
