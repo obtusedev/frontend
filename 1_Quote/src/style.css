@@ -7,7 +7,7 @@
 .container {
     max-width: 80vw;
     max-height: 50vh;
-    width: calc(800px - 4rem * 2);
+    width: calc((800px - 4rem) * 2);
     margin-top: 150px;
     margin-right: auto;
     margin-left: auto;
@@ -47,4 +47,63 @@ main {
     text-decoration: underline;
     text-decoration-color: inherit;
     text-decoration-style: solid;
+}
+
+#button-container {
+    display: flex;
+    margin: 1.25rem;
+}
+
+#button-container button {
+    margin: .5rem 1rem;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .5em 1em;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 1px black solid;
+}
+
+.button:active {
+    transform: scale(1.2);
+}
+
+/* Stops hover from sticking on mobile */
+@media (hover: hover) {
+    .button:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+/* TODO: this looks terrible on landscape */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .container {
+        max-width: 90vw;
+        width: calc((600px - 1rem) * 2);
+        margin-top: 40px;
+    }
+    #button-container {
+        display: flex;
+        flex-direction: column;
+        margin: 1.25rem;
+    }
+    #button-container button {
+        margin: .25rem .5rem;
+        -webkit-appearance: none;
+    }
+    .button {
+        color: black;
+        font-size: 1.2rem;
+    }
+    .button:active {
+        background: #000;
+        color: #fff;
+    }
 }
