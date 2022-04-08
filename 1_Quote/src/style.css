@@ -58,7 +58,8 @@ main {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 1rem;
-    padding: .5em 1em;
+    padding: .5em 1.5em;
+    min-width: 10rem;
     background-color: transparent;
     transition: all 0.3s ease;
     overflow: hidden;
