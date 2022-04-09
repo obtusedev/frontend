@@ -49,7 +49,7 @@ main {
 }
 
 #button-container button {
-    margin: .5rem 1rem;
+    margin: 0.5rem 1rem;
 }
 
 .button {
@@ -58,8 +58,8 @@ main {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 1rem;
-    padding: .5em 1.5em;
-    min-width: 10rem;
+    padding: 0.5em 1.5em;
+    min-width: 11rem;
     background-color: transparent;
     transition: all 0.3s ease;
     overflow: hidden;
@@ -90,7 +90,7 @@ main {
         margin: 1.25rem;
     }
     #button-container button {
-        margin: .25rem .5rem;
+        margin: 0.25rem 0.5rem;
         -webkit-appearance: none;
     }
     .button {
@@ -101,4 +101,20 @@ main {
         background: #000;
         color: #fff;
     }
+}
+
+/* Dark Theme */
+body.dark {
+    color: white;
+    background-color: #36454f;
+}
+
+body.dark button {
+    color: white;
+    border: 1px solid white;
+}
+
+body.dark button:hover {
+    background: white;
+    color: black;
 }
