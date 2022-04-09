@@ -1,5 +1,8 @@
 const titleEl = document.getElementById("title");
-const authorEl = document.getElementById("author");
+const quoteEl = document.getElementById("quote");
+const previous = document.getElementById("previous");
+const random = document.getElementById("random");
+const next = document.getElementById("next");
 
 
 
