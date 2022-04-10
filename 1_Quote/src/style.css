@@ -28,6 +28,7 @@ main {
 #quote {
     font-family: "Poppins", sans-serif;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
 #author {
