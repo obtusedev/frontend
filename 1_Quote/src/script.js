@@ -4,7 +4,6 @@ const buttonContainerEl = document.getElementById("button-container");
 const copyrightEl = document.getElementById("copyright");
 const previous = document.getElementById("previous");
 const random = document.getElementById("random");
-const next = document.getElementById("next");
 
 /* Dark Mode */
 const isTimeForDarkMode = () => {
