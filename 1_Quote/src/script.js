@@ -19,10 +19,19 @@ const setDarkTheme = () => {
     if (isTimeForDarkMode()) bodyEl.setAttribute("class", "dark");
 };
 
+/* Helpers */
 const searchWiki = e => {
     let query = e.target.textContent;
-    let url = encodeURI(`https://en.wikipedia.org/wiki/${query.replaceAll(" ", "_")}`);
+    let url = encodeURI(
+        `https://en.wikipedia.org/wiki/${query.replaceAll(" ", "_")}`
+    );
     window.open(url, "_blank");
+};
+
+const copyQuoteToClipboard = e => {
+    navigator.clipboard.writeText(e.target.textContent);
+    alert("Copied!"); // TODO: make this more user friendly
+};
 }
 
 authorEl.onclick = searchWiki;
