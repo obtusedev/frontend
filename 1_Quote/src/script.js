@@ -1,5 +1,7 @@
 const titleEl = document.getElementById("title");
 const quoteEl = document.getElementById("quote");
+const buttonContainerEl = document.getElementById("button-container");
+const copyrightEl = document.getElementById("copyright");
 const previous = document.getElementById("previous");
 const random = document.getElementById("random");
 const next = document.getElementById("next");
@@ -49,6 +51,14 @@ const createAuthorSpan = author => {
     quoteEl.insertAdjacentElement("beforeend", fragment);
 };
 
+const createCopyrightSpan = (year, link) => {
+    const fragment = document.createElement("span");
+    fragment.setAttribute("id", "copyright");
+    fragment.innerHTML = `Copyright ${year} ${link.split("/")[2]}`;
+    fragment.onclick = () => console.log("clicked");
+    buttonContainerEl.insertAdjacentElement("afterend", fragment);
+};
+
 const quoteOfTheDay = async () => {
     // no cached quote
     if (window.localStorage.getItem("qotd") === null || refreshQuote()) {
@@ -56,16 +66,20 @@ const quoteOfTheDay = async () => {
         let data = await res.json();
         window.localStorage.setItem("qotd", JSON.stringify(data));
         let { quote, author, date } = data.contents.quotes[0];
+        let { year, url } = data.copyright;
         window.localStorage.setItem("day", new Date(date).getUTCDate());
         quoteEl.innerText = `${quote} - `;
         quoteEl.onclick = copyQuoteToClipboard;
         createAuthorSpan(author);
+        createCopyrightSpan(year, url);
     } else {
         let cached = JSON.parse(window.localStorage.getItem("qotd"));
         let { quote, author } = cached.contents.quotes[0];
+        let { year, url } = cached.copyright;
         quoteEl.innerText = `${quote} - `;
         quoteEl.onclick = copyQuoteToClipboard;
         createAuthorSpan(author);
+        createCopyrightSpan(year, url);
     }
 };
 

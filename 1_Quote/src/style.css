@@ -44,6 +44,13 @@ main {
     text-decoration-style: solid;
 }
 
+#copyright {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    cursor: pointer;
+}
+
 #button-container {
     display: flex;
     margin: 1.25rem;
