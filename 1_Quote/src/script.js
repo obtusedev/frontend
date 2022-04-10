@@ -48,7 +48,6 @@ const refreshQuote = () => {
 const createAuthorSpan = author => {
     const fragment = document.createElement("span");
     fragment.setAttribute("id", "author");
-    fragment.setAttribute("class", "underline");
     fragment.innerText = author;
     fragment.onclick = searchWiki;
     quoteEl.insertAdjacentElement("beforeend", fragment);
@@ -57,7 +56,7 @@ const createAuthorSpan = author => {
 const createCopyrightSpan = (year, link) => {
     const fragment = document.createElement("span");
     fragment.setAttribute("id", "copyright");
-    fragment.setAttribute("class", "underline")
+    fragment.classList.add("underline")
     fragment.innerHTML = `Copyright ${year} ${link.split("/")[2]}`;
     fragment.onclick = () => window.open(link ,"_blank");
     buttonContainerEl.insertAdjacentElement("afterend", fragment);

@@ -5,10 +5,10 @@
 }
 
 .container {
-    max-width: 80vw;
-    max-height: 50vh;
+    max-width: 60vw;
+    max-height: 70vh;
     width: calc((800px - 4rem) * 2);
-    margin-top: 150px;
+    margin-top: 80px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -22,13 +22,15 @@ main {
 #title {
     font-family: "Roboto Slab", serif;
     font-size: 2.5rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 5rem;
 }
 
 #quote {
     font-family: "Poppins", sans-serif;
     font-size: 1.25rem;
     cursor: pointer;
+    margin-bottom: 2rem;
+    line-height: 2.2;
 }
 
 #author {
@@ -59,15 +61,15 @@ main {
 }
 
 #button-container button {
-    margin: 0.5rem 1rem;
+    margin: 0 2.5rem;
 }
 
 .button {
     display: inline-block;
     text-align: center;
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
     padding: 0.5em 1.5em;
     min-width: 11rem;
     background-color: transparent;
