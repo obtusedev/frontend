@@ -49,6 +49,8 @@ main {
     font-weight: 400;
     font-size: 1.15rem;
     cursor: pointer;
+    position: absolute;
+    bottom: 2rem;
 }
 
 #button-container {
