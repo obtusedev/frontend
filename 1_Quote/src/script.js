@@ -53,8 +53,9 @@ const createAuthorSpan = author => {
 const createCopyrightSpan = (year, link) => {
     const fragment = document.createElement("span");
     fragment.setAttribute("id", "copyright");
+    fragment.setAttribute("class", "underline")
     fragment.innerHTML = `Copyright ${year} ${link.split("/")[2]}`;
-    fragment.onclick = () => console.log("clicked");
+    fragment.onclick = () => window.open(link ,"_blank");
     buttonContainerEl.insertAdjacentElement("afterend", fragment);
 };
 
