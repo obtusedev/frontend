@@ -33,13 +33,10 @@ const copyQuoteToClipboard = e => {
     alert("Copied!"); // TODO: make this more user friendly
 };
 
-const isNewDay = () => {
-    // does the quote of the day in local session cache need refreshing
-    const savedDate = new Date().getDate();
-    window.localStorage.setItem("day", savedDate);
+const refreshQuote = () => {
+    const savedDay = window.localStorage.getItem("day");
     const today = new Date().getDate();
-
-    if (window.localStorage.getItem("day") < today) return true;
+    if (savedDay === undefined || savedDay < today) return true;
     return false;
 };
 
@@ -54,11 +51,12 @@ const createAuthorSpan = author => {
 
 const quoteOfTheDay = async () => {
     // no cached quote
-    if (window.localStorage.getItem("qotd") === null || isNewDay()) {
+    if (window.localStorage.getItem("qotd") === null || refreshQuote()) {
         let res = await fetch("https://quotes.rest/qod?language=en");
         let data = await res.json();
         window.localStorage.setItem("qotd", JSON.stringify(data));
-        let { quote, author } = data.contents.quotes[0];
+        let { quote, author, date } = data.contents.quotes[0];
+        window.localStorage.setItem("day", new Date(date).getUTCDate());
         quoteEl.innerText = `${quote} - `;
         quoteEl.onclick = copyQuoteToClipboard;
         createAuthorSpan(author);
