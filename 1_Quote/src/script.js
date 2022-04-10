@@ -52,6 +52,28 @@ const createAuthorSpan = author => {
     quoteEl.insertAdjacentElement("beforeend", fragment);
 };
 
-}
+const quoteOfTheDay = async () => {
+    // no cached quote
+    if (window.localStorage.getItem("qotd") === null || isNewDay()) {
+        let res = await fetch("https://quotes.rest/qod?language=en");
+        let data = await res.json();
+        window.localStorage.setItem("qotd", JSON.stringify(data));
+        let { quote, author } = data.contents.quotes[0];
+        quoteEl.innerText = `${quote} - `;
+        quoteEl.onclick = copyQuoteToClipboard;
+        createAuthorSpan(author);
+    } else {
+        let cached = JSON.parse(window.localStorage.getItem("qotd"));
+        let { quote, author } = cached.contents.quotes[0];
+        quoteEl.innerText = `${quote} - `;
+        quoteEl.onclick = copyQuoteToClipboard;
+        createAuthorSpan(author);
+    }
+};
 
-authorEl.onclick = searchWiki;
+const main = () => {
+    quoteOfTheDay();
+    setDarkTheme();
+};
+
+main();
