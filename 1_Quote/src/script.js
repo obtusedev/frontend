@@ -7,7 +7,7 @@ const random = document.getElementById("random");
 
 /* Dark Mode */
 const isTimeForDarkMode = () => {
-    // between 8:00pm & 6:00am; 20:00-06:00
+    // between 8:00pm & 7:00am; 20:00-07:00
     const hour = new Date().getHours();
     if (hour >= 20 || hour <= 6) {
         return true;
@@ -17,7 +17,11 @@ const isTimeForDarkMode = () => {
 
 const setDarkTheme = () => {
     const bodyEl = document.querySelector("body");
-    if (isTimeForDarkMode()) bodyEl.setAttribute("class", "dark");
+    if (isTimeForDarkMode()) {
+        bodyEl.classList.add("dark");
+    } else {
+        bodyEl.classList.remove("dark");
+    }
 };
 
 /* Helpers */
