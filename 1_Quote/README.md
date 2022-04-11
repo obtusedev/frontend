@@ -14,3 +14,5 @@ Could of done better with how repetitive and verbose the js is.
 
 -   Better way to notify user that quote was copied to clipboard rather than using `alert()`.
 -   Not a good distinction between clicking author name for wikiepdia page and coping quote. Clicking on author for wikipeida page actually triggers the copy to clickboard feature.
+
+> Status: unfinished. Access to more endpoints require api key.
