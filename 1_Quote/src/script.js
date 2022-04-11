@@ -34,8 +34,10 @@ const searchWiki = e => {
 };
 
 const copyQuoteToClipboard = e => {
+    // TODO: make this more user friendly
+    // TODO: stop this from triggering when searchWiki
     navigator.clipboard.writeText(e.target.textContent);
-    alert("Copied!"); // TODO: make this more user friendly
+    alert("Copied!");
 };
 
 const refreshQuote = () => {
@@ -56,9 +58,9 @@ const createAuthorSpan = author => {
 const createCopyrightSpan = (year, link) => {
     const fragment = document.createElement("span");
     fragment.setAttribute("id", "copyright");
-    fragment.classList.add("underline")
+    fragment.classList.add("underline");
     fragment.innerHTML = `Copyright ${year} ${link.split("/")[2]}`;
-    fragment.onclick = () => window.open(link ,"_blank");
+    fragment.onclick = () => window.open(link, "_blank");
     buttonContainerEl.insertAdjacentElement("afterend", fragment);
 };
 
